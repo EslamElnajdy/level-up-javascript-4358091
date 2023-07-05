@@ -16,6 +16,19 @@
 
   <script>
     // Write your code here
+    function food(menus) {
+      let flatMenus = menus.flat();
+      let combinedMenu = new Set();
+      flatMenus.forEach(item => combinedMenu.add(item));
+
+      const ulNode = document.querySelector('#combined-menu')
+      for (let item of combinedMenu) {
+        let menuNode = document.createElement('li');
+        menuNode.textContent = item;
+        ulNode.appendChild(menuNode);
+      }
+    }
+    food([["Tacos", "Burgers"], ["Pizza"], ["Burgers", "Fries"]])
 
   </script>
 </body>
